@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaibs_micro
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vaibs_micro
+  template:
+    metadata:
+      labels:
+        app: vaibs_micro
+    spec:
+      containers:
+        - name: vaibs_micro
+          image: your-docker-image
+          ports:
+            - containerPort: 8080
